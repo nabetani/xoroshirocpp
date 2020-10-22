@@ -1,7 +1,7 @@
 /**
  * @file xoroshiross.h
  * @author NABETANI Takenori
- * @brief use Xoroshiro128** and Xoroshiro128++ as c++ random lib.
+ * @brief Xoroshiro128** and Xoroshiro128++ as c++ random lib.
  * @note
  *  algorithms are copied from following URLs:
  *    http://prng.di.unimi.it/xoroshiro128starstar.c
@@ -54,9 +54,16 @@ public:
   using result_type = std::uint64_t;
 
 private:
+  /** default rng seed #0
+   * @note This is an nfounded value.
+   */
   static constexpr result_type default_seed0() {
     return 17804420534016853344ull;
   }
+
+  /** default rng seed #1
+   * @note This is an nfounded value.
+   */
   static constexpr result_type default_seed1() {
     return 7735267388770358179ull;
   }
