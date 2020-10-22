@@ -10,7 +10,6 @@
  */
 
 #include <cstdint>
-#include <limits>
 
 namespace xoroshiro {
 namespace detail {
@@ -24,23 +23,31 @@ inline std::uint64_t conv_seed0(std::uint64_t s) {
 inline std::uint64_t conv_seed1(std::uint64_t s) {
   return (11559677109961209133ull * rotl(s, 32)) ^ 17519439474968054641ull;
 }
-} // namespace detail
-class rng128pp {
 
+class rng128base {
 public:
   using result_type = std::uint64_t;
 
-  /**
-   * @brief Gets the smallest possible value in the output range.
-   */
   static constexpr result_type min() { return 0; }
 
-  /**
-   * @brief Gets the largest possible value in the output range.
-   */
-  static constexpr result_type max() {
-    return std::numeric_limits<result_type>::max();
+  static constexpr result_type max() { return ~(min()); }
+
+protected:
+  std::uint64_t s[2];
+
+  bool same_to(rng128base const &that) const {
+    return s[0] == that.s[0] && s[1] == that.s[1];
   }
+  rng128base() = delete;
+
+  explicit rng128base(result_type seed)
+      : s{detail::conv_seed0(seed), detail::conv_seed1(seed)} {}
+};
+
+} // namespace detail
+class rng128pp : public detail::rng128base {
+
+public:
   result_type operator()() {
     result_type const s0 = s[0];
     result_type s1 = s[1];
@@ -51,13 +58,12 @@ public:
     return result;
   }
 
-  friend bool operator==(rng128pp const &a, rng128pp const &b) {
-    return a.s[0] == b.s[0] && a.s[1] == b.s[1];
+  inline friend bool operator==(rng128pp const &a, rng128pp const &b) {
+    return a.same_to(b);
   }
 
   std::uint64_t s[2];
-  rng128pp() = delete;
   explicit rng128pp(result_type seed)
-      : s{detail::conv_seed0(seed), detail::conv_seed1(seed)} {}
+      : detail::rng128base(seed){}
 };
 } // namespace xoroshiro
