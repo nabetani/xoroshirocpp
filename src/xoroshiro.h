@@ -24,13 +24,17 @@ inline std::uint64_t conv_seed1(std::uint64_t s) {
   return (11559677109961209133ull * rotl(s, 32)) ^ 17519439474968054641ull;
 }
 
-class rng128base {
+template <typename derived> class rng128base {
 public:
   using result_type = std::uint64_t;
 
   static constexpr result_type min() { return 0; }
 
   static constexpr result_type max() { return ~(min()); }
+
+  inline friend bool operator==(derived const &a, derived const &b) {
+    return a.same_to(b);
+  }
 
 protected:
   std::uint64_t s[2];
@@ -45,7 +49,8 @@ protected:
 };
 
 } // namespace detail
-class rng128pp : public detail::rng128base {
+class rng128pp : public detail::rng128base<rng128pp> {
+  using base = detail::rng128base<rng128pp>;
 
 public:
   result_type operator()() {
@@ -57,13 +62,6 @@ public:
     s[1] = detail::rotl(s1, 28);                   // c
     return result;
   }
-
-  inline friend bool operator==(rng128pp const &a, rng128pp const &b) {
-    return a.same_to(b);
-  }
-
-  std::uint64_t s[2];
-  explicit rng128pp(result_type seed)
-      : detail::rng128base(seed){}
+  explicit rng128pp(result_type seed) : base(seed) {}
 };
 } // namespace xoroshiro
