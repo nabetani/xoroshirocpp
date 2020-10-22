@@ -1,5 +1,5 @@
 /**
- * @file xoroshiross.h
+ * @file xoroshiro.h
  * @author NABETANI Takenori
  * @brief Xoroshiro128** and Xoroshiro128++ as c++ random lib.
  * @note
