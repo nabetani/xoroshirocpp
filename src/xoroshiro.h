@@ -3,7 +3,7 @@
  * @author NABETANI Takenori
  * @brief use Xoroshiro128** and Xoroshiro128++ as c++ random lib.
  * @note
- *  algorithms are copied frmo following URLs:
+ *  algorithms are copied from following URLs:
  *    http://prng.di.unimi.it/xoroshiro128starstar.c
  *    http://prng.di.unimi.it/xoroshiro128plusplus.c
  *
