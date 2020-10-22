@@ -64,4 +64,19 @@ public:
   }
   explicit rng128pp(result_type seed) : base(seed) {}
 };
+
+class rng128ss : public detail::rng128base<rng128ss> {
+  using base = detail::rng128base<rng128ss>;
+
+public:
+  result_type operator()() {
+    uint64_t const s0 = s[0];
+    uint64_t const result = detail::rotl(s0 * 5, 7) * 9;
+    uint64_t const s1 = s0 ^ s[1];
+    s[0] = detail::rotl(s0, 24) ^ s1 ^ (s1 << 16); // a, b
+    s[1] = detail::rotl(s1, 37);                   // c
+    return result;
+  }
+  explicit rng128ss(result_type seed) : base(seed) {}
+};
 } // namespace xoroshiro
