@@ -10,6 +10,8 @@
  */
 
 #include <cstdint>
+#include <istream>
+#include <ostream>
 
 namespace xoroshiro {
 namespace detail {
@@ -28,12 +30,47 @@ template <typename derived> class rng128base {
 public:
   using result_type = std::uint64_t;
 
+private:
+  static constexpr result_type default_seed0() {
+    return 17804420534016853344ull;
+  }
+  static constexpr result_type default_seed1() {
+    return 7735267388770358179ull;
+  }
+
+public:
   static constexpr result_type min() { return 0; }
 
   static constexpr result_type max() { return ~(min()); }
 
-  inline friend bool operator==(derived const &a, derived const &b) {
+  inline friend //
+      bool
+      operator==(derived const &a, derived const &b) {
     return a.same_to(b);
+  }
+  inline friend //
+      bool
+      operator!=(derived const &a, derived const &b) {
+    return !a.same_to(b);
+  }
+
+  template <typename CharT, typename Traits> //
+  friend inline                              //
+      std::basic_istream<CharT, Traits> &
+      operator>>(std::basic_istream<CharT, Traits> &is, rng128base &rng) //
+  {
+    is >> rng.s[0];
+    is >> rng.s[1];
+    return is;
+  }
+
+  template <typename CharT, typename Traits> //
+  friend inline                              //
+      std::basic_ostream<CharT, Traits> &
+      operator<<(std::basic_ostream<CharT, Traits> &os,
+                 rng128base const &rng) //
+  {
+    return os << rng.s[0] << " " << rng.s[1];
   }
 
 protected:
@@ -42,7 +79,7 @@ protected:
   bool same_to(rng128base const &that) const {
     return s[0] == that.s[0] && s[1] == that.s[1];
   }
-  rng128base() = delete;
+  rng128base() : s{default_seed0(), default_seed1()} {}
 
   explicit rng128base(result_type seed)
       : s{detail::conv_seed0(seed), detail::conv_seed1(seed)} {}
@@ -63,6 +100,7 @@ public:
     return result;
   }
   explicit rng128pp(result_type seed) : base(seed) {}
+  rng128pp() : base() {}
 };
 
 class rng128ss : public detail::rng128base<rng128ss> {
@@ -70,13 +108,15 @@ class rng128ss : public detail::rng128base<rng128ss> {
 
 public:
   result_type operator()() {
-    uint64_t const s0 = s[0];
-    uint64_t const result = detail::rotl(s0 * 5, 7) * 9;
-    uint64_t const s1 = s0 ^ s[1];
+    const uint64_t s0 = s[0];
+    uint64_t s1 = s[1];
+    const uint64_t result = detail::rotl(s0 * 5, 7) * 9;
+    s1 ^= s0;
     s[0] = detail::rotl(s0, 24) ^ s1 ^ (s1 << 16); // a, b
     s[1] = detail::rotl(s1, 37);                   // c
     return result;
   }
   explicit rng128ss(result_type seed) : base(seed) {}
+  rng128ss() : base() {}
 };
 } // namespace xoroshiro
