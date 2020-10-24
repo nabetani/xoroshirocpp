@@ -13,6 +13,10 @@
 #include <istream>
 #include <ostream>
 
+#if defined __GNUC__ && defined __x86_64__
+#include <x86intrin.h>
+#endif
+
 namespace xoroshiro {
 
 /** Namespace containing implementation details */
@@ -24,7 +28,11 @@ namespace detail {
  * @return rotated value
  */
 inline std::uint64_t rotl(const uint64_t x, int k) {
+#if defined __GNUC__ && defined __x86_64__
+  return __rolq(x, k);
+#else
   return (x << k) | (x >> (64 - k));
+#endif
 }
 
 /** create seed value#0
