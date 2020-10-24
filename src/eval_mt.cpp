@@ -20,7 +20,7 @@ bits_type bits_mt(void *param, void *state) {
   return dist(*rng);
 }
 
-void write_mt(void *state) { std::puts("mt"); }
+void write_name(void *state) { std::puts("mt"); }
 
 extern "C" {
 unif01_Gen *create_unif01();
@@ -33,7 +33,7 @@ unif01_Gen *create_unif01() {
   gen->name = name;
   gen->param = rng;
   gen->state = nullptr;
-  gen->Write = write_mt;
+  gen->Write = write_name;
   gen->GetBits = bits_mt;
   gen->GetU01 = double01;
   return gen;
