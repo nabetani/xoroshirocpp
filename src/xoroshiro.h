@@ -41,7 +41,8 @@ inline std::uint64_t rotl(const uint64_t x, int k) {
  * @note This is an nfounded calculation.
  */
 inline std::uint64_t conv_seed0(std::uint64_t s) {
-  return (11660880167232069161ull * s) ^ 13827146352468370501ull;
+  return ((11660880167232069161ull * s) ^ 13827146352468370501ull) |
+         (1ull << (s & 63));
 }
 
 /** create seed value#1
@@ -50,7 +51,8 @@ inline std::uint64_t conv_seed0(std::uint64_t s) {
  * @note This is an nfounded calculation.
  */
 inline std::uint64_t conv_seed1(std::uint64_t s) {
-  return (11559677109961209133ull * rotl(s, 32)) ^ 17519439474968054641ull;
+  return ((11559677109961209133ull * rotl(s, 32)) ^ 17519439474968054641ull) |
+         (1ull << ((s / 64) & 63));
 }
 
 /** base class of xoroshiro128++ and xoroshiro128**
