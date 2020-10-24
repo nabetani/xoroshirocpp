@@ -9,5 +9,5 @@ opts="-O2 -Wall \
     -L/usr/local/lib"
 
 gcc-10 -c -std=c99 src/eval.c ${opts} -o bin/eval.o
-g++-10 -std=c++11 src/eval_mt.cpp bin/eval.o -o bin/eval_mt ${opts} -ltestu01 -lprobdist -lmylib -lgmp -lm
-bin/eval_mt
+g++-10 -std=c++11 src/eval_pp.cpp bin/eval.o -o bin/eval_pp ${opts} -ltestu01 -lprobdist -lmylib -lgmp -lm
+bin/eval_pp
