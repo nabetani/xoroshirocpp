@@ -1,4 +1,5 @@
 #include "xoroshiro.h"
+#include "xorshift128.h"
 #include <chrono>
 #include <cstdio>
 #include <iostream>
@@ -29,6 +30,7 @@ int main(int argc, char const *argv[]) {
     test<std::mt19937>("std::mt19937", n);
     test<xoroshiro::rng128pp>("xoroshiro::rng128pp", n);
     test<xoroshiro::rng128ss>("xoroshiro::rng128ss", n);
+    test<xorshift128::rng>("xorshift128::rng", n);
   }
   return 0;
 }
