@@ -1,5 +1,6 @@
 #include "xoroshiro.h"
 #include "xorshift128.h"
+#include "xoshiro.h"
 #include <chrono>
 #include <cstdio>
 #include <iostream>
@@ -28,8 +29,11 @@ void test(char const *name, size_t n) {
 int main(int argc, char const *argv[]) {
   for (size_t n : {10000ull, 10000000ull}) {
     test<std::mt19937>("std::mt19937", n);
+    test<std::mt19937_64>("std::mt19937_64", n);
     test<xoroshiro::rng128pp>("xoroshiro::rng128pp", n);
     test<xoroshiro::rng128ss>("xoroshiro::rng128ss", n);
+    test<xoshiro::rng128pp>("xoshiro::rng128pp", n);
+    test<xoshiro::rng128ss>("xoshiro::rng128ss", n);
     test<xorshift128::rng>("xorshift128::rng", n);
   }
   return 0;

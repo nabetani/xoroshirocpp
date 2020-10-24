@@ -1,5 +1,6 @@
 #include "xoroshiro.h"
 #include "xorshift128.h"
+#include "xoshiro.h"
 #include <iostream>
 #include <random>
 #include <sstream>
@@ -52,6 +53,8 @@ int main(int argc, char const *argv[]) {
   test<std::mt19937>("std::mt19937");
   test<xoroshiro::rng128pp>("xoroshiro::rng128pp");
   test<xoroshiro::rng128ss>("xoroshiro::rng128ss");
+  test<xoshiro::rng128pp>("xoshiro::rng128pp");
+  test<xoshiro::rng128ss>("xoshiro::rng128ss");
   test<xorshift128::rng>("xorshift128::rng");
   return 0;
 }
