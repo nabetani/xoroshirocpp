@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <iostream>
 #include <random>
+#include <string>
 
 template <typename rng_type> //
 void test(char const *name, size_t n) {
@@ -24,7 +25,7 @@ void test(char const *name, size_t n) {
 }
 
 int main(int argc, char const *argv[]) {
-  for (size_t n : {10000ull, 100000ull}) {
+  for (size_t n : {10000ull, 10000000ull}) {
     test<std::mt19937>("std::mt19937", n);
     test<xoroshiro::rng128pp>("xoroshiro::rng128pp", n);
     test<xoroshiro::rng128ss>("xoroshiro::rng128ss", n);
