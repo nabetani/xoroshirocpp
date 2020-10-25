@@ -37,3 +37,7 @@ eval/eval_xpp
 eval/eval_xs128
 eval/eval_xss
 eval/CMakeCache.txt
+TestU01-1.2.3
+eval/eval_mt
+eval/eval_pp
+eval/eval_ss
