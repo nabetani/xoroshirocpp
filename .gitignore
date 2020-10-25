@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+eval/cmake_install.cmake
+eval/CMakeFiles
+eval/Makefile
+eval/eval_xpp
+eval/eval_xs128
+eval/eval_xss
+eval/CMakeCache.txt
