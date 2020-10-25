@@ -1,0 +1,1373 @@
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                 Starting MidCrush
+                 Version: TestU01 1.2.3
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+smarsa_BirthdaySpacings test:
+-----------------------------------------------
+   N =  1,  n = 5000000,  r =  0,    d = 1073741824,    t = 2,    p = 1
+
+
+      Number of cells = d^t = 1152921504606846976
+      Lambda = Poisson mean =      27.1051
+
+
+----------------------------------------------------
+Total expected number = N*Lambda      :      27.11
+Total observed number                 :      28
+p-value of test                       :    0.46
+
+
+-----------------------------------------------
+CPU time used                    :  00:00:02.94
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+smarsa_BirthdaySpacings test:
+-----------------------------------------------
+   N =  1,  n = 5000000,  r =  0,    d = 1073741824,    t = 2,    p = 1
+
+
+      Number of cells = d^t = 1152921504606846976
+      Lambda = Poisson mean =      27.1051
+
+
+----------------------------------------------------
+Total expected number = N*Lambda      :      27.11
+Total observed number                 :      23
+p-value of test                       :    0.75
+
+
+-----------------------------------------------
+CPU time used                    :  00:00:03.04
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+Test sknuth_Collision calling smultin_Multinomial
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+smultin_Multinomial test:
+-----------------------------------------------
+   N =  1,  n = 5000000,  r =  0,   d = 65536,   t =  2,
+       Sparse =   TRUE
+
+       GenerCell = smultin_GenerCellSerial
+       Number of cells = d^t =         4294967296
+       Expected number per cell =  1 /  858.99346
+       EColl = n^2 / (2k) =  2910.383046
+       Hashing =   TRUE
+
+       Collision test,    Mu =      2909.2534,    Sigma =    53.8957
+
+-----------------------------------------------
+Test Results for Collisions
+
+Expected number of collisions = Mu    :     2909.25
+Observed number of collisions         :     2909
+p-value of test                       :    0.50
+
+-----------------------------
+Total number of cells containing j balls
+
+  j =  0                              :       4289970205
+  j =  1                              :          4994184
+  j =  2                              :             2905
+  j =  3                              :                2
+  j =  4                              :                0
+  j =  5                              :                0
+
+-----------------------------------------------
+CPU time used                    :  00:00:02.25
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+Test sknuth_Collision calling smultin_Multinomial
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+smultin_Multinomial test:
+-----------------------------------------------
+   N =  1,  n = 5000000,  r =  0,   d = 65536,   t =  2,
+       Sparse =   TRUE
+
+       GenerCell = smultin_GenerCellSerial
+       Number of cells = d^t =         4294967296
+       Expected number per cell =  1 /  858.99346
+       EColl = n^2 / (2k) =  2910.383046
+       Hashing =   TRUE
+
+       Collision test,    Mu =      2909.2534,    Sigma =    53.8957
+
+-----------------------------------------------
+Test Results for Collisions
+
+Expected number of collisions = Mu    :     2909.25
+Observed number of collisions         :     2936
+p-value of test                       :    0.31
+
+-----------------------------
+Total number of cells containing j balls
+
+  j =  0                              :       4289970232
+  j =  1                              :          4994130
+  j =  2                              :             2932
+  j =  3                              :                2
+  j =  4                              :                0
+  j =  5                              :                0
+
+-----------------------------------------------
+CPU time used                    :  00:00:02.25
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sknuth_Gap test:
+-----------------------------------------------
+   N =  1,  n = 200000,  r = 22,   Alpha =        0,   Beta  = 0.00390625
+
+
+-----------------------------------------------
+Number of degrees of freedom          : 1114
+Chi-square statistic                  : 1204.97
+p-value of test                       :    0.03
+
+-----------------------------------------------
+CPU time used                    :  00:00:05.21
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sknuth_Gap test:
+-----------------------------------------------
+   N =  1,  n = 200000,  r = 22,   Alpha =        0,   Beta  = 0.00390625
+
+
+-----------------------------------------------
+Number of degrees of freedom          : 1114
+Chi-square statistic                  : 1148.37
+p-value of test                       :    0.23
+
+-----------------------------------------------
+CPU time used                    :  00:00:05.55
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sknuth_SimpPoker test:
+-----------------------------------------------
+   N =  1,  n = 400000,  r = 24,   d =   64,   k =   64
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   19
+Chi-square statistic                  :   23.35
+p-value of test                       :    0.22
+
+-----------------------------------------------
+CPU time used                    :  00:00:03.05
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sknuth_SimpPoker test:
+-----------------------------------------------
+   N =  1,  n = 400000,  r = 24,   d =   64,   k =   64
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   19
+Chi-square statistic                  :   14.35
+p-value of test                       :    0.76
+
+-----------------------------------------------
+CPU time used                    :  00:00:03.23
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sknuth_CouponCollector test:
+-----------------------------------------------
+   N =  1,  n = 500000,  r = 26,   d =   16
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   44
+Chi-square statistic                  :   29.80
+p-value of test                       :    0.95
+
+-----------------------------------------------
+CPU time used                    :  00:00:03.07
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sknuth_CouponCollector test:
+-----------------------------------------------
+   N =  1,  n = 500000,  r = 26,   d =   16
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   44
+Chi-square statistic                  :   40.18
+p-value of test                       :    0.64
+
+-----------------------------------------------
+CPU time used                    :  00:00:03.13
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sknuth_MaxOft test:
+-----------------------------------------------
+   N =  1,  n = 2000000,  r =  0,   d = 100000,   t =  6
+
+      Number of categories = 100000
+      Expected number per category  = 20.00
+
+
+-----------------------------------------------
+Number of degrees of freedom          : 99999
+Chi-square statistic                  : 1.00e+5
+p-value of test                       :    0.13
+
+
+-----------------------------------------------
+Anderson-Darling statistic            :    0.86
+p-value of test                       :    0.14
+
+
+-----------------------------------------------
+CPU time used                    :  00:00:02.14
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sknuth_MaxOft test:
+-----------------------------------------------
+   N =  1,  n = 2000000,  r =  0,   d = 100000,   t =  6
+
+      Number of categories = 100000
+      Expected number per category  = 20.00
+
+
+-----------------------------------------------
+Number of degrees of freedom          : 99999
+Chi-square statistic                  :99688.20
+p-value of test                       :    0.76
+
+
+-----------------------------------------------
+Anderson-Darling statistic            :   0.013
+p-value of test                       :    0.99
+
+
+-----------------------------------------------
+CPU time used                    :  00:00:02.07
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+svaria_WeightDistrib test:
+-----------------------------------------------
+   N =  1,  n = 200000,  r = 27,  k = 256,  Alpha =      0,  Beta =  0.125
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   41
+Chi-square statistic                  :   50.70
+p-value of test                       :    0.14
+
+-----------------------------------------------
+CPU time used                    :  00:00:06.07
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+svaria_WeightDistrib test:
+-----------------------------------------------
+   N =  1,  n = 200000,  r = 27,  k = 256,  Alpha =      0,  Beta =  0.125
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   41
+Chi-square statistic                  :   54.28
+p-value of test                       :    0.08
+
+-----------------------------------------------
+CPU time used                    :  00:00:06.15
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+smarsa_MatrixRank test:
+-----------------------------------------------
+   N =  1,  n = 20000,  r = 20,    s = 10,    L = 60,    k = 60
+
+
+-----------------------------------------------
+Number of degrees of freedom          :    3
+Chi-square statistic                  :    1.49
+p-value of test                       :    0.69
+
+-----------------------------------------------
+CPU time used                    :  00:00:01.72
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+smarsa_MatrixRank test:
+-----------------------------------------------
+   N =  1,  n = 20000,  r = 20,    s = 10,    L = 60,    k = 60
+
+
+-----------------------------------------------
+Number of degrees of freedom          :    3
+Chi-square statistic                  :    1.76
+p-value of test                       :    0.62
+
+-----------------------------------------------
+CPU time used                    :  00:00:01.82
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sstring_HammingIndep test:
+-----------------------------------------------
+   N =  1,  n = 500000,  r = 20,   s = 10,   L = 300,   d = 0
+
+
+
+Counters with expected numbers >= 10
+-----------------------------------------------
+Number of degrees of freedom          : 2209
+Chi-square statistic                  : 2291.40
+p-value of test                       :    0.11
+
+-----------------------------------------------
+CPU time used                    :  00:00:03.45
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sstring_HammingIndep test:
+-----------------------------------------------
+   N =  1,  n = 500000,  r = 20,   s = 10,   L = 300,   d = 0
+
+
+
+Counters with expected numbers >= 10
+-----------------------------------------------
+Number of degrees of freedom          : 2209
+Chi-square statistic                  : 2249.51
+p-value of test                       :    0.27
+
+-----------------------------------------------
+CPU time used                    :  00:00:03.53
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+swalk_RandomWalk1 test:
+-----------------------------------------------
+   N =  1,  n = 1000000,  r =  0,   s = 30,   L0 =  150,   L1 =  150
+
+
+
+-----------------------------------------------
+Test on the values of the Statistic H
+
+Number of degrees of freedom          :   52
+ChiSquare statistic                   :   54.14
+p-value of test                       :    0.39
+
+
+-----------------------------------------------
+Test on the values of the Statistic M
+
+Number of degrees of freedom          :   52
+ChiSquare statistic                   :   43.76
+p-value of test                       :    0.78
+
+
+-----------------------------------------------
+Test on the values of the Statistic J
+
+Number of degrees of freedom          :   75
+ChiSquare statistic                   :   93.21
+p-value of test                       :    0.08
+
+
+-----------------------------------------------
+Test on the values of the Statistic R
+
+Number of degrees of freedom          :   44
+ChiSquare statistic                   :   43.58
+p-value of test                       :    0.49
+
+
+-----------------------------------------------
+Test on the values of the Statistic C
+
+Number of degrees of freedom          :   26
+ChiSquare statistic                   :   20.17
+p-value of test                       :    0.78
+
+
+-----------------------------------------------
+CPU time used                    :  00:00:02.96
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+swalk_RandomWalk1 test:
+-----------------------------------------------
+   N =  1,  n = 1000000,  r =  0,   s = 30,   L0 =  150,   L1 =  150
+
+
+
+-----------------------------------------------
+Test on the values of the Statistic H
+
+Number of degrees of freedom          :   52
+ChiSquare statistic                   :   69.93
+p-value of test                       :    0.05
+
+
+-----------------------------------------------
+Test on the values of the Statistic M
+
+Number of degrees of freedom          :   52
+ChiSquare statistic                   :   49.57
+p-value of test                       :    0.57
+
+
+-----------------------------------------------
+Test on the values of the Statistic J
+
+Number of degrees of freedom          :   75
+ChiSquare statistic                   :   54.46
+p-value of test                       :    0.96
+
+
+-----------------------------------------------
+Test on the values of the Statistic R
+
+Number of degrees of freedom          :   44
+ChiSquare statistic                   :   42.91
+p-value of test                       :    0.52
+
+
+-----------------------------------------------
+Test on the values of the Statistic C
+
+Number of degrees of freedom          :   26
+ChiSquare statistic                   :   26.13
+p-value of test                       :    0.46
+
+
+-----------------------------------------------
+CPU time used                    :  00:00:03.10
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sstring_PeriodsInStrings test:
+-----------------------------------------------
+   N =  1,  n = 300000000,  r =  0,   s =   30
+
+
+-----------------------------------------------
+Number of degrees of freedom          :  302
+Chi-square statistic                  : 8.20e+8
+p-value of test                       :   eps      *****
+
+-----------------------------------------------
+CPU time used                    :  00:01:09.88
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sstring_PeriodsInStrings test:
+-----------------------------------------------
+   N =  1,  n = 300000000,  r =  0,   s =   30
+
+
+-----------------------------------------------
+Number of degrees of freedom          :  302
+Chi-square statistic                  : 8.20e+8
+p-value of test                       :   eps      *****
+
+-----------------------------------------------
+CPU time used                    :  00:01:10.93
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sstring_PeriodsInStrings test:
+-----------------------------------------------
+   N =  1,  n = 300000000,  r = 15,   s =   15
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   56
+Chi-square statistic                  :   51.27
+p-value of test                       :    0.65
+
+-----------------------------------------------
+CPU time used                    :  00:00:57.06
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sstring_PeriodsInStrings test:
+-----------------------------------------------
+   N =  1,  n = 300000000,  r = 15,   s =   15
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   56
+Chi-square statistic                  :   83.10
+p-value of test                       :    0.01
+
+-----------------------------------------------
+CPU time used                    :  00:00:56.49
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sstring_HammingWeight2 test:
+-----------------------------------------------
+   N = 100,  n = 100000000,  r =  0,   s = 30,   L = 1000000
+
+
+-----------------------------------------------
+
+Kolmogorov-Smirnov+ statistic = D+    :   0.000
+p-value of test                       : 1 - eps1    *****
+
+Kolmogorov-Smirnov- statistic = D-    :    1.00
+p-value of test                       :   eps      *****
+
+Anderson-Darling statistic = A2       : 3573.68
+p-value of test                       :   eps      *****
+
+Test on the sum of all N observations
+Number of degrees of freedom          : 10000
+Chi-square statistic                  :1.14e+10
+p-value of test                       :   eps      *****
+
+-----------------------------------------------
+CPU time used                    :  00:01:06.16
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sstring_HammingWeight2 test:
+-----------------------------------------------
+   N = 100,  n = 100000000,  r =  0,   s = 30,   L = 1000000
+
+
+-----------------------------------------------
+
+Kolmogorov-Smirnov+ statistic = D+    :   0.000
+p-value of test                       : 1 - eps1    *****
+
+Kolmogorov-Smirnov- statistic = D-    :    1.00
+p-value of test                       :   eps      *****
+
+Anderson-Darling statistic = A2       : 3573.68
+p-value of test                       :   eps      *****
+
+Test on the sum of all N observations
+Number of degrees of freedom          : 10000
+Chi-square statistic                  :1.14e+10
+p-value of test                       :   eps      *****
+
+-----------------------------------------------
+CPU time used                    :  00:01:06.55
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sstring_HammingWeight2 test:
+-----------------------------------------------
+   N = 30,  n = 100000000,  r = 20,   s = 10,   L = 1000000
+
+
+-----------------------------------------------
+
+Kolmogorov-Smirnov+ statistic = D+    :   0.088
+p-value of test                       :    0.59
+
+Kolmogorov-Smirnov- statistic = D-    :    0.11
+p-value of test                       :    0.46
+
+Anderson-Darling statistic = A2       :    0.48
+p-value of test                       :    0.77
+
+Test on the sum of all N observations
+Number of degrees of freedom          : 3000
+Chi-square statistic                  : 3041.25
+p-value of test                       :    0.30
+
+-----------------------------------------------
+CPU time used                    :  00:00:34.97
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sstring_HammingWeight2 test:
+-----------------------------------------------
+   N = 30,  n = 100000000,  r = 20,   s = 10,   L = 1000000
+
+
+-----------------------------------------------
+
+Kolmogorov-Smirnov+ statistic = D+    :   0.035
+p-value of test                       :    0.91
+
+Kolmogorov-Smirnov- statistic = D-    :    0.17
+p-value of test                       :    0.15
+
+Anderson-Darling statistic = A2       :    0.84
+p-value of test                       :    0.45
+
+Test on the sum of all N observations
+Number of degrees of freedom          : 3000
+Chi-square statistic                  : 3068.73
+p-value of test                       :    0.19
+
+-----------------------------------------------
+CPU time used                    :  00:00:34.92
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sspectral_Fourier3 test:
+-----------------------------------------------
+   N = 50000,  n = 16384,  r =  0,   s =   30,   k =   14
+
+
+-----------------------------------------------
+
+Kolmogorov-Smirnov+ statistic = D+    : 2.08e-3
+p-value of test                       :    0.96
+
+Kolmogorov-Smirnov- statistic = D-    :   0.012
+p-value of test                       :    0.32
+
+Anderson-Darling statistic = A2       :    0.90
+p-value of test                       :    0.42
+
+-----------------------------------------------
+CPU time used                    :  00:00:52.87
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sspectral_Fourier3 test:
+-----------------------------------------------
+   N = 50000,  n = 16384,  r =  0,   s =   30,   k =   14
+
+
+-----------------------------------------------
+
+Kolmogorov-Smirnov+ statistic = D+    : 6.12e-3
+p-value of test                       :    0.73
+
+Kolmogorov-Smirnov- statistic = D-    : 9.99e-3
+p-value of test                       :    0.44
+
+Anderson-Darling statistic = A2       :    0.37
+p-value of test                       :    0.88
+
+-----------------------------------------------
+CPU time used                    :  00:00:53.44
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sspectral_Fourier3 test:
+-----------------------------------------------
+   N = 50000,  n = 16384,  r = 20,   s =   10,   k =   14
+
+
+-----------------------------------------------
+
+Kolmogorov-Smirnov+ statistic = D+    :   0.017
+p-value of test                       :    0.09
+
+Kolmogorov-Smirnov- statistic = D-    : 8.99e-3
+p-value of test                       :    0.51
+
+Anderson-Darling statistic = A2       :    0.98
+p-value of test                       :    0.37
+
+-----------------------------------------------
+CPU time used                    :  00:00:59.24
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+sspectral_Fourier3 test:
+-----------------------------------------------
+   N = 50000,  n = 16384,  r = 20,   s =   10,   k =   14
+
+
+-----------------------------------------------
+
+Kolmogorov-Smirnov+ statistic = D+    :   0.010
+p-value of test                       :    0.42
+
+Kolmogorov-Smirnov- statistic = D-    :   0.013
+p-value of test                       :    0.27
+
+Anderson-Darling statistic = A2       :    0.77
+p-value of test                       :    0.50
+
+-----------------------------------------------
+CPU time used                    :  00:00:58.58
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+scomp_LinearComp test:
+-----------------------------------------------
+   N =  1,  n = 120000,  r =  0,    s = 1
+
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   10
+Chi2 statistic for size of jumps      :    9.07
+p-value of test                       :    0.53
+
+
+-----------------------------------------------
+Normal statistic for number of jumps  : -244.46
+p-value of test                       : 1 - eps1    *****
+
+
+
+-----------------------------------------------
+CPU time used                    :  00:00:00.09
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+scomp_LinearComp test:
+-----------------------------------------------
+   N =  1,  n = 120000,  r =  0,    s = 1
+
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   10
+Chi2 statistic for size of jumps      :   30.14
+p-value of test                       :  8.1e-4    *****
+
+
+-----------------------------------------------
+Normal statistic for number of jumps  : -244.50
+p-value of test                       : 1 - eps1    *****
+
+
+
+-----------------------------------------------
+CPU time used                    :  00:00:00.08
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+scomp_LinearComp test:
+-----------------------------------------------
+   N =  1,  n = 120000,  r = 29,    s = 1
+
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   10
+Chi2 statistic for size of jumps      :    6.97
+p-value of test                       :    0.73
+
+
+-----------------------------------------------
+Normal statistic for number of jumps  : -244.44
+p-value of test                       : 1 - eps1    *****
+
+
+
+-----------------------------------------------
+CPU time used                    :  00:00:00.09
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+scomp_LinearComp test:
+-----------------------------------------------
+   N =  1,  n = 120000,  r = 29,    s = 1
+
+
+
+-----------------------------------------------
+Number of degrees of freedom          :   10
+Chi2 statistic for size of jumps      :    4.50
+p-value of test                       :    0.92
+
+
+-----------------------------------------------
+Normal statistic for number of jumps  : -244.43
+p-value of test                       : 1 - eps1    *****
+
+
+
+-----------------------------------------------
+CPU time used                    :  00:00:00.08
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+snpair_ClosePairs test:
+-----------------------------------------------
+   N = 10,  n = 2000000,  r =  0,  t = 2,  p = 0,  m = 30,  Torus =  TRUE
+
+
+---------------------------------------
+Test based on the 2 nearest points (NP):
+
+Stat. AD on the N values (NP)         :    0.57
+p-value of test                       :    0.68
+
+
+A2 test based on the spacings between the
+   successive jump times of process Y_n(t):
+
+A2 test on the values of A2 (m-NP)    :    0.96
+p-value of test                       :    0.37
+
+Test on the Nm values of W_{n,i}(mNP1):    0.52
+p-value of test                       :    0.72
+
+Test on the jump times of Y
+   (superposition of Yn):
+
+Expected number of jumps of Y = mN    :     300
+Number of jumps of Y                  :     316
+p-value of test                       :    0.18
+
+Stat. AD (mNP2)                       :    0.44
+p-value of test                       :    0.81
+
+-----------------------------------------------
+CPU time used                    :  00:00:20.70
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+snpair_ClosePairs test:
+-----------------------------------------------
+   N = 10,  n = 2000000,  r =  0,  t = 2,  p = 0,  m = 30,  Torus =  TRUE
+
+
+---------------------------------------
+Test based on the 2 nearest points (NP):
+
+Stat. AD on the N values (NP)         :    0.71
+p-value of test                       :    0.55
+
+
+A2 test based on the spacings between the
+   successive jump times of process Y_n(t):
+
+A2 test on the values of A2 (m-NP)    :    0.42
+p-value of test                       :    0.83
+
+Test on the Nm values of W_{n,i}(mNP1):    1.61
+p-value of test                       :    0.15
+
+Test on the jump times of Y
+   (superposition of Yn):
+
+Expected number of jumps of Y = mN    :     300
+Number of jumps of Y                  :     287
+p-value of test                       :    0.76
+
+Stat. AD (mNP2)                       :    0.68
+p-value of test                       :    0.58
+
+-----------------------------------------------
+CPU time used                    :  00:00:21.25
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+snpair_ClosePairs test:
+-----------------------------------------------
+   N = 10,  n = 2000000,  r =  0,  t = 3,  p = 0,  m = 30,  Torus =  TRUE
+
+
+---------------------------------------
+Test based on the 2 nearest points (NP):
+
+Stat. AD on the N values (NP)         :    0.42
+p-value of test                       :    0.82
+
+
+A2 test based on the spacings between the
+   successive jump times of process Y_n(t):
+
+A2 test on the values of A2 (m-NP)    :    0.35
+p-value of test                       :    0.90
+
+Test on the Nm values of W_{n,i}(mNP1):    0.50
+p-value of test                       :    0.74
+
+Test on the jump times of Y
+   (superposition of Yn):
+
+Expected number of jumps of Y = mN    :     300
+Number of jumps of Y                  :     279
+p-value of test                       :    0.88
+
+Stat. AD (mNP2)                       :    1.90
+p-value of test                       :    0.10
+
+Stat. AD after spacings (mNP2-S)      :    1.03
+p-value of test                       :    0.34
+
+-----------------------------------------------
+CPU time used                    :  00:00:28.80
+
+Generator state:
+xorshift128
+
+
+
+
+***********************************************************
+HOST = MBPR-Mori-2.local, Darwin
+
+xorshift128
+
+
+snpair_ClosePairs test:
+-----------------------------------------------
+   N = 10,  n = 2000000,  r =  0,  t = 3,  p = 0,  m = 30,  Torus =  TRUE
+
+
+---------------------------------------
+Test based on the 2 nearest points (NP):
+
+Stat. AD on the N values (NP)         :    0.60
+p-value of test                       :    0.64
+
+
+A2 test based on the spacings between the
+   successive jump times of process Y_n(t):
+
+A2 test on the values of A2 (m-NP)    :    1.38
+p-value of test                       :    0.21
+
+Test on the Nm values of W_{n,i}(mNP1):    0.83
+p-value of test                       :    0.46
+
+Test on the jump times of Y
+   (superposition of Yn):
+
+Expected number of jumps of Y = mN    :     300
+Number of jumps of Y                  :     309
+p-value of test                       :    0.31
+
+Stat. AD (mNP2)                       :    0.63
+p-value of test                       :    0.62
+
+Stat. AD after spacings (mNP2-S)      :    0.53
+p-value of test                       :    0.71
+
+-----------------------------------------------
+CPU time used                    :  00:00:28.76
+
+Generator state:
+xorshift128
+
+
+
+
+
+========= Summary results of MidCrush =========
+
+ Version:          TestU01 1.2.3
+ Generator:        xorshift128
+ Number of statistics:  72
+ Total CPU time:   00:14:08.97
+ The following tests gave p-values outside [0.001, 0.9990]:
+ (eps  means a value < 1.0e-300):
+ (eps1 means a value < 1.0e-15):
+
+       Test                          p-value
+ ----------------------------------------------
+ 11  PeriodsInStrings, r = 0          eps  
+ 11  PeriodsInStrings, r = 0          eps  
+ 13  HammingWeight2, r = 0            eps  
+ 13  HammingWeight2, r = 0            eps  
+ 17  LinearComp, r = 0              1 - eps1
+ 17  LinearComp, r = 0              1 - eps1
+ 17  LinearComp, r = 0               8.1e-4
+ 18  LinearComp, r = 29             1 - eps1
+ 18  LinearComp, r = 29             1 - eps1
+ ----------------------------------------------
+ All other tests were passed
+
+
+
