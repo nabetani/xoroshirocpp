@@ -145,3 +145,58 @@ target_compile_features(eval_xss
   PRIVATE c_std_99
 )
 
+
+#=========== eval_ss
+add_executable(eval_ss
+  ${TEST_U01}
+  ../src/eval.c
+  ../src/eval_ss.cpp
+)
+
+target_include_directories(eval_ss
+  PUBLIC
+    ../src
+    ${TEST_U01_DIR}/testu01
+    ${TEST_U01_DIR}/include
+)
+target_compile_features(eval_ss
+  PRIVATE cxx_std_11
+  PRIVATE c_std_99
+)
+
+
+#=========== eval_pp
+add_executable(eval_pp
+  ${TEST_U01}
+  ../src/eval.c
+  ../src/eval_pp.cpp
+)
+
+target_include_directories(eval_pp
+  PUBLIC
+    ../src
+    ${TEST_U01_DIR}/testu01
+    ${TEST_U01_DIR}/include
+)
+target_compile_features(eval_pp
+  PRIVATE cxx_std_11
+  PRIVATE c_std_99
+)
+
+#=========== eval_mt
+add_executable(eval_mt
+  ${TEST_U01}
+  ../src/eval.c
+  ../src/eval_mt.cpp
+)
+
+target_include_directories(eval_mt
+  PUBLIC
+    ../src
+    ${TEST_U01_DIR}/testu01
+    ${TEST_U01_DIR}/include
+)
+target_compile_features(eval_mt
+  PRIVATE cxx_std_11
+  PRIVATE c_std_99
+)
