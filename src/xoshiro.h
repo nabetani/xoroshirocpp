@@ -1,12 +1,10 @@
 /**
- * @file xoroshiro.h
+ * @file xoshiro.h
  * @author NABETANI Takenori
- * @brief Xoroshiro128** and Xoroshiro128++ as c++ random lib.
+ * @brief Xoshiro128** and Xoshiro128++ as c++ random lib.
  * @note
  *  algorithms are copied from following URLs:
- *    http://prng.di.unimi.it/xoroshiro128starstar.c
- *    http://prng.di.unimi.it/xoroshiro128plusplus.c
- *
+ *    http://prng.di.unimi.it/xoshiro128plusplus.c
  */
 
 #include <cstdint>
@@ -17,7 +15,7 @@
 #include <x86intrin.h>
 #endif
 
-namespace xoroshiro {
+namespace xoshiro {
 
 /** Namespace containing implementation details */
 namespace detail {
@@ -27,11 +25,11 @@ namespace detail {
  * @param k rotate k bits
  * @return rotated value
  */
-inline std::uint64_t rotl(const uint64_t x, int k) {
+inline std::uint32_t rotl(std::uint32_t const x, int k) {
 #if defined __GNUC__ && defined __x86_64__
-  return __rolq(x, k);
+  return __rold(x, k);
 #else
-  return (x << k) | (x >> (64 - k));
+  return (x << k) | (x >> (31 & -k));
 #endif
 }
 
@@ -40,42 +38,38 @@ inline std::uint64_t rotl(const uint64_t x, int k) {
  * @return seed value
  * @note This is an nfounded calculation.
  */
-inline std::uint64_t conv_seed0(std::uint64_t s) {
-  return ((11660880167232069161ull * s) ^ 13827146352468370501ull) |
-         (1ull << (s & 63));
+inline std::uint32_t conv_seed(std::uint64_t s, int ix) {
+  std::uint32_t const s0 =
+      static_cast<std::uint32_t>((ix & 1) ? (s & 0xffffffff) : (s >> 32));
+  std::uint32_t const s1 = rotl(s0, (ix & 2) ? 16 : 0);
+  std::uint32_t const m = 1u << (31 & (s >> (5 * ix)));
+  std::uint32_t const muls[] = {
+      297968085u,
+      1620086527u,
+      1521909871u,
+      1042423439u,
+  };
+  std::uint32_t const pats[] = {2617986876u, 1538821552u, 795482552u,
+                                435381156u};
+  return (s1 * muls[ix] ^ pats[ix]) | m;
 }
 
-/** create seed value#1
- * @param s source of seed
- * @return seed value
- * @note This is an nfounded calculation.
- */
-inline std::uint64_t conv_seed1(std::uint64_t s) {
-  return ((11559677109961209133ull * rotl(s, 32)) ^ 17519439474968054641ull) |
-         (1ull << ((s / 64) & 63));
-}
-
-/** base class of xoroshiro128++ and xoroshiro128**
+/** base class of xoshiro128++ and xoshiro128**
  * @tparam derived derived class
  */
 template <typename derived> class rng128base {
 public:
   /** The type of the generated random value. */
-  using result_type = std::uint64_t;
+  using result_type = std::uint32_t;
 
 private:
   /** default rng seed #0
    * @note This is an nfounded value.
    */
-  static constexpr result_type default_seed0() {
-    return 17804420534016853344ull;
-  }
-
-  /** default rng seed #1
-   * @note This is an nfounded value.
-   */
-  static constexpr result_type default_seed1() {
-    return 7735267388770358179ull;
+  static result_type default_seed(size_t ix) {
+    constexpr result_type seeds[] = {3169277489u, 915989341u, 1028940276u,
+                                     952680402u};
+    return seeds[ix];
   }
 
 public:
@@ -121,6 +115,8 @@ public:
   {
     is >> rng.s[0];
     is >> rng.s[1];
+    is >> rng.s[2];
+    is >> rng.s[3];
     return is;
   }
 
@@ -137,11 +133,15 @@ public:
       operator<<(std::basic_ostream<CharT, Traits> &os,
                  rng128base const &rng) //
   {
-    return os << rng.s[0] << " " << rng.s[1];
+    return os                 //
+           << rng.s[0] << " " //
+           << rng.s[1] << " " //
+           << rng.s[2] << " " //
+           << rng.s[3];
   }
 
 protected:
-  std::uint64_t s[2]; ///< inner rng state
+  std::uint32_t s[4]; ///< inner rng state
 
   /** compares two rng objects of the same type for equality.
    * @param a rng object.
@@ -149,22 +149,31 @@ protected:
    * @returns true if a and b generates same values.
    */
   bool same_to(rng128base const &that) const {
-    return s[0] == that.s[0] && s[1] == that.s[1];
+    return s[0] == that.s[0]     //
+           && s[1] == that.s[1]  //
+           && s[2] == that.s[2]  //
+           && s[3] == that.s[3]; //
   }
 
   /** constructor with default seed. */
-  rng128base() : s{default_seed0(), default_seed1()} {}
+  rng128base()
+      : s{
+            default_seed(0),
+            default_seed(1),
+            default_seed(2),
+            default_seed(3),
+        } {}
 
   /** constructor with seed
    * @param seed seed of rng.
    */
-  explicit rng128base(result_type seed)
-      : s{detail::conv_seed0(seed), detail::conv_seed1(seed)} {}
+  explicit rng128base(std::uint64_t seed)
+      : s{detail::conv_seed(seed, 0), detail::conv_seed(seed, 1),
+          detail::conv_seed(seed, 2), detail::conv_seed(seed, 3)} {}
 };
-
 } // namespace detail
 
-/** Xoroshiro128++ */
+/** Xoshiro128++ */
 class rng128pp : public detail::rng128base<rng128pp> {
   using base = detail::rng128base<rng128pp>;
 
@@ -173,12 +182,14 @@ public:
    * @return new random number
    */
   result_type operator()() {
-    result_type const s0 = s[0];
-    result_type s1 = s[1];
-    uint64_t const result = detail::rotl(s0 + s1, 17) + s0;
-    s1 ^= s0;
-    s[0] = detail::rotl(s0, 49) ^ s1 ^ (s1 << 21); // a, b
-    s[1] = detail::rotl(s1, 28);                   // c
+    result_type const result = detail::rotl(s[0] + s[3], 7) + s[0];
+    result_type const t = s[1] << 9;
+    s[2] ^= s[0];
+    s[3] ^= s[1];
+    s[1] ^= s[2];
+    s[0] ^= s[3];
+    s[2] ^= t;
+    s[3] = detail::rotl(s[3], 11);
     return result;
   }
 
@@ -191,7 +202,7 @@ public:
   rng128pp() : base() {}
 };
 
-/** Xoroshiro128** */
+/** Xoshiro128** */
 class rng128ss : public detail::rng128base<rng128ss> {
   using base = detail::rng128base<rng128ss>;
 
@@ -200,12 +211,14 @@ public:
    * @return new random number
    */
   result_type operator()() {
-    const uint64_t s0 = s[0];
-    uint64_t s1 = s[1];
-    const uint64_t result = detail::rotl(s0 * 5, 7) * 9;
-    s1 ^= s0;
-    s[0] = detail::rotl(s0, 24) ^ s1 ^ (s1 << 16); // a, b
-    s[1] = detail::rotl(s1, 37);                   // c
+    result_type const result = detail::rotl(s[1] * 5, 7) * 9;
+    result_type const t = s[1] << 9;
+    s[2] ^= s[0];
+    s[3] ^= s[1];
+    s[1] ^= s[2];
+    s[0] ^= s[3];
+    s[2] ^= t;
+    s[3] = detail::rotl(s[3], 11);
     return result;
   }
 
@@ -217,4 +230,4 @@ public:
   /** constructor with default seed. */
   rng128ss() : base() {}
 };
-} // namespace xoroshiro
+} // namespace xoshiro

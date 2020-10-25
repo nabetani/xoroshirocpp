@@ -1,0 +1,50 @@
+nabetani@ubuntu:~/github/nabetani/xoroshirocpp$ ./gcc.sh 
+std::mt19937: 137.598400ns  c=2.00%
+std::mt19937_64: 73.900700ns  c=1.94%
+xoroshiro::rng128pp: 24.265600ns  c=2.16%
+xoroshiro::rng128ss: 25.828000ns  c=1.83%
+xoshiro::rng128pp: 20.864500ns  c=1.86%
+xoshiro::rng128ss: 24.791600ns  c=1.97%
+xorshift128::rng: 24.890500ns  c=2.14%
+std::mt19937: 137.368670ns  c=1.98%
+std::mt19937_64: 68.334425ns  c=1.98%
+xoroshiro::rng128pp: 23.847461ns  c=1.99%
+xoroshiro::rng128ss: 25.556048ns  c=1.98%
+xoshiro::rng128pp: 20.459953ns  c=1.98%
+xoshiro::rng128ss: 22.143858ns  c=1.98%
+xorshift128::rng: 22.181519ns  c=1.99%
+
+real	0m3.218s
+user	0m3.198s
+sys	0m0.010s
+nabetani@ubuntu:~/github/nabetani/xoroshirocpp$ ./clang.sh 
+std::mt19937: 122.260000ns  c=2.00%
+std::mt19937_64: 80.187200ns  c=1.94%
+xoroshiro::rng128pp: 26.098900ns  c=2.16%
+xoroshiro::rng128ss: 29.411300ns  c=1.83%
+xoshiro::rng128pp: 24.401000ns  c=1.86%
+xoshiro::rng128ss: 31.015500ns  c=1.97%
+xorshift128::rng: 22.776000ns  c=2.14%
+std::mt19937: 121.525520ns  c=1.98%
+std::mt19937_64: 73.916884ns  c=1.98%
+xoroshiro::rng128pp: 25.862884ns  c=1.99%
+xoroshiro::rng128ss: 29.266924ns  c=1.98%
+xoshiro::rng128pp: 24.155823ns  c=1.98%
+xoshiro::rng128ss: 25.834171ns  c=1.98%
+xorshift128::rng: 21.603838ns  c=1.99%
+
+real	0m3.240s
+user	0m3.220s
+sys	0m0.009s
+nabetani@ubuntu:~/github/nabetani/xoroshirocpp$ g++ --version
+g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+nabetani@ubuntu:~/github/nabetani/xoroshirocpp$ clang++ --version
+clang version 10.0.0-4ubuntu1 
+Target: aarch64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+nabetani@ubuntu:~/github/nabetani/xoroshirocpp$ 

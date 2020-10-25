@@ -1,0 +1,57 @@
+Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz   2.71 GHz
+
+C:\work\github\nabetani\xoroshirocpp>bin\mscl
+std::mt19937: 15.050000ns  c=1.95%
+std::mt19937_64: 22.090000ns  c=1.87%
+xoroshiro::rng128pp: 21.480000ns  c=2.09%
+xoroshiro::rng128ss: 108.950000ns  c=2.04%
+xoshiro::rng128pp: 25.070000ns  c=1.99%
+xoshiro::rng128ss: 42.170000ns  c=1.99%
+xorshift128::rng: 11.550000ns  c=1.87%
+std::mt19937: 15.280160ns  c=1.98%
+std::mt19937_64: 22.641480ns  c=1.97%
+xoroshiro::rng128pp: 16.353490ns  c=1.98%
+xoroshiro::rng128ss: 32.589570ns  c=1.98%
+xoshiro::rng128pp: 5.247830ns  c=1.98%
+xoshiro::rng128ss: 12.763810ns  c=1.98%
+xorshift128::rng: 4.900460ns  c=1.98%
+
+C:\work\github\nabetani\xoroshirocpp>cl
+Microsoft(R) C/C++ Optimizing Compiler Version 19.26.28806 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+使い方: cl [ オプション... ] ファイル名... [ /link リンク オプション... ]
+
+C:\work\github\nabetani\xoroshirocpp>ver
+
+Microsoft Windows [Version 10.0.19042.572]
+
+
+----------------------------------
+
+
+C:\work\github\nabetani\xoroshirocpp>bin\mscl
+std::mt19937: 23.470000ns  c=1.95%
+std::mt19937_64: 42.140000ns  c=1.87%
+xoroshiro::rng128pp: 3.550000ns  c=2.09%
+xoroshiro::rng128ss: 3.350000ns  c=2.04%
+xoshiro::rng128pp: 3.660000ns  c=1.99%
+xoshiro::rng128ss: 3.570000ns  c=1.99%
+xorshift128::rng: 3.460000ns  c=1.87%
+std::mt19937: 16.843480ns  c=1.98%
+std::mt19937_64: 31.212670ns  c=1.97%
+xoroshiro::rng128pp: 3.648060ns  c=1.98%
+xoroshiro::rng128ss: 3.385400ns  c=1.98%
+xoshiro::rng128pp: 3.646670ns  c=1.98%
+xoshiro::rng128ss: 3.659560ns  c=1.98%
+xorshift128::rng: 3.656020ns  c=1.98%
+
+C:\work\github\nabetani\xoroshirocpp>cl
+Microsoft(R) C/C++ Optimizing Compiler Version 19.26.28806 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+使い方: cl [ オプション... ] ファイル名... [ /link リンク オプション... ]
+
+C:\work\github\nabetani\xoroshirocpp>ver
+
+Microsoft Windows [Version 10.0.19042.572]

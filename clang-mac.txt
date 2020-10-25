@@ -1,0 +1,18 @@
+std::mt19937: 22.507100ns  c=2.11%
+std::mt19937_64: 22.753100ns  c=1.88%
+xoroshiro::rng128pp: 3.926600ns  c=2.03%
+xoroshiro::rng128ss: 4.053200ns  c=1.82%
+xoshiro::rng128pp: 3.931500ns  c=1.84%
+xoshiro::rng128ss: 3.763900ns  c=2.02%
+xorshift128::rng: 4.374000ns  c=2.33%
+std::mt19937: 22.808387ns  c=1.99%
+std::mt19937_64: 23.000491ns  c=1.97%
+xoroshiro::rng128pp: 3.893147ns  c=1.98%
+xoroshiro::rng128ss: 3.754032ns  c=1.99%
+xoshiro::rng128pp: 3.682162ns  c=1.97%
+xoshiro::rng128ss: 3.774499ns  c=1.98%
+xorshift128::rng: 4.351660ns  c=1.99%
+Apple clang version 12.0.0 (clang-1200.0.32.21)
+Target: x86_64-apple-darwin19.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
