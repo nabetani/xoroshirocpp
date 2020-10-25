@@ -1,0 +1,19 @@
+std::mt19937: 3.800000ns  c=2.00%
+std::mt19937_64: 7.400000ns  c=1.94%
+xoroshiro::rng128pp: 2.000000ns  c=2.16%
+xoroshiro::rng128ss: 1.900000ns  c=1.83%
+xoshiro::rng128pp: 1.700000ns  c=1.86%
+xoshiro::rng128ss: 1.700000ns  c=1.97%
+xorshift128::rng: 2.100000ns  c=2.14%
+std::mt19937: 3.896500ns  c=1.98%
+std::mt19937_64: 7.396900ns  c=1.98%
+xoroshiro::rng128pp: 1.999000ns  c=1.99%
+xoroshiro::rng128ss: 1.877700ns  c=1.98%
+xoshiro::rng128pp: 1.714500ns  c=1.98%
+xoshiro::rng128ss: 1.680800ns  c=1.98%
+xorshift128::rng: 2.028000ns  c=1.99%
+g++-10 (Homebrew GCC 10.2.0) 10.2.0
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
