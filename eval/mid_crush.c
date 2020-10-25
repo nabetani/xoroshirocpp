@@ -842,10 +842,9 @@ static void MidCrush(unif01_Gen *gen, char *filename, int Rep[])
 void mid_crush(unif01_Gen *gen) {
   int i;
   int Rep[1 + NDIM] = {0};
-  Rep[1] = 1;
-  // for (i = 1; i <= MIDCRUSH_NUM; ++i) {
-  //   Rep[i] = 1;
-  // }
+  for (i = 1; i <= MIDCRUSH_NUM; ++i) {
+    Rep[i] = 2;
+  }
   MidCrush(gen, NULL, Rep);
 }
 
